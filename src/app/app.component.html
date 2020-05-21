@@ -15,30 +15,26 @@
       <td>
         <input formControlName="11" class="form-control" type="number" id="11" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-        <small *ngIf="calculoForm.get('11').errors?.required" class="text-danger d-block mt-2">
-          O número é obrigatório!
-        </small>
+        <ap-vmessage *ngIf="calculoForm.get('11').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="12" class="form-control" type="number" id="12" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-        <small *ngIf="calculoForm.get('12').errors?.required" class="text-danger d-block mt-2">
-          O número é obrigatório!
-        </small>
+          <ap-vmessage *ngIf="calculoForm.get('12').errors?.required" text="O número é obrigatório!">
+          </ap-vmessage>
       </td>
       <td>
         <input formControlName="13" class="form-control" type="number" id="13" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-        <small *ngIf="calculoForm.get('13').errors?.required" class="text-danger d-block mt-2">
-          O número é obrigatório!
-        </small>
+          <ap-vmessage *ngIf="calculoForm.get('13').errors?.required" text="O número é obrigatório!">
+          </ap-vmessage>
       </td>
       <td>
         <input formControlName="14" class="form-control" type="number" id="14" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-        <small *ngIf="calculoForm.get('14').errors?.required" class="text-danger d-block mt-2">
-          O número é obrigatório!
-        </small>
+          <ap-vmessage *ngIf="calculoForm.get('14').errors?.required" text="O número é obrigatório!">
+          </ap-vmessage>
       </td>
     </tr>
     <tr>

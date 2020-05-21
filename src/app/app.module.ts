@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { VMessageModule } from './shared/components/vmessage/vmessage.module';
 
 
 
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    VMessageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
