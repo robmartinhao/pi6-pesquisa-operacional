@@ -10,11 +10,56 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
 
   calculoForm: FormGroup;
+  mostrarResultado: boolean = false;
+
+  cr11: number;
+  cr12: number;
+  cr13: number = 0;
+  cr14: number = 0;
+
+  cr21: string = '';
+  cr22: string = '';
+  cr23: string = '';
+  cr24: string = '';
+
+  cr31: string = '';
+  cr32: string = '';
+  cr33: string = '';
+  cr34: string = '';
+
+  cr41: string = '';
+  cr42: string = '';
+  cr43: string = '';
+  cr44: string = '';
+
+  dt11: string = '';
+  dt12: string = '';
+  dt13: string = '';
+  dt14: string = '';
+
+  dt21: string = '';
+  dt22: string = '';
+  dt23: string = '';
+  dt24: string = '';
+
+  dt31: string = '';
+  dt32: string = '';
+  dt33: string = '';
+  dt34: string = '';
+
+  dt41: string = '';
+  dt42: string = '';
+  dt43: string = '';
+  dt44: string = '';
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
+    this.mostrarResultado = false;
+
     this.calculoForm = this.formBuilder.group({
+
       11: ['', Validators.required],
       12: ['', Validators.required],
       13: ['', Validators.required],
@@ -35,10 +80,54 @@ export class AppComponent implements OnInit {
       43: ['', Validators.required],
       44: ['', Validators.required],
 
+      // cr11: [this.cr11],
+      // cr12: [this.cr12],
+      // cr13: [''],
+      // cr14: [''],
+      
+      // cr21: 0,
+      // cr22: 0,
+      // cr23: 0,
+      // cr24: 0,
+
+      // cr31: 0,
+      // cr32: 0,
+      // cr33: 0,
+      // cr34: 0,
+
+      // cr41: 0,
+      // cr42: 0,
+      // cr43: 0,
+      // cr44: 0,
+
+      // dt11: 0,
+      // dt12: 0,
+      // dt13: 0,
+      // dt14: 0,
+      
+      // dt21: 0,
+      // dt22: 0,
+      // dt23: 0,
+      // dt24: 0,
+
+      // dt31: 0,
+      // dt32: 0,
+      // dt33: 0,
+      // dt34: 0,
+
+      // dt41: 0,
+      // dt42: 0,
+      // dt43: 0,
+      // dt44: 0
+
+
+
     });
   }
 
   calcular() {
+
+    console.log(this.mostrarResultado);
 
     const v11 = this.calculoForm.get('11').value;
     const v12 = this.calculoForm.get('12').value;
@@ -60,12 +149,13 @@ export class AppComponent implements OnInit {
     const v43 = this.calculoForm.get('43').value;
     const v44 = this.calculoForm.get('44').value;
 
+   
     var linha1 = new Array(v11, v12, v13, v14);
     var linha2 = new Array(v21, v22, v23, v24);
     var linha3 = new Array(v31, v32, v33, v34);
     var linha4 = new Array(v41, v42, v43, v44);
 
-    var tabelaCustoDeTransporte = new Array(linha1, linha2, linha3, linha4);
+    //var tabelaCustoDeTransporte = new Array(linha1, linha2, linha3, linha4);
 
     const menorValorLinha1 = Math.min.apply(Math, linha1);
     console.log(menorValorLinha1);
@@ -96,76 +186,105 @@ export class AppComponent implements OnInit {
       console.log('\n');
     }
 
-    console.log('\n\n\n======================================================');
+    this.cr11 = tabelaDeCustoReduzida[0][0];
+    console.log("cr11 = " + this.cr11);
 
-    var coluna1 = new Array();
-    var coluna2 = new Array();
-    var coluna3 = new Array();
-    var coluna4 = new Array();
+    this.cr12 = tabelaDeCustoReduzida[0][1];
+    console.log("cr12 = " + this.cr12);
 
-    for (let i = 0; i < 4; i++) {
-      coluna1[i] = tabelaDeCustoReduzida[i][0];
-    }
-    for (let i = 0; i < 4; i++) {
-      coluna2[i] = tabelaDeCustoReduzida[i][1];
-    }
-    for (let i = 0; i < 4; i++) {
-      coluna3[i] = tabelaDeCustoReduzida[i][2];
-    }
-    for (let i = 0; i < 4; i++) {
-      coluna4[i] = tabelaDeCustoReduzida[i][3];
-    }
+    this.cr13 = tabelaDeCustoReduzida[0][2];
+    console.log("cr13 = " + this.cr13);
 
-    const menorValorColuna1 = Math.min.apply(Math, coluna1);
-    console.log(menorValorColuna1);
-    const menorValorColuna2 = Math.min.apply(Math, coluna2);
-    console.log(menorValorColuna2);
-    const menorValorColuna3 = Math.min.apply(Math, coluna3);
-    console.log(menorValorColuna3);
-    const menorValorColuna4 = Math.min.apply(Math, coluna4);
-    console.log(menorValorColuna4);
-    console.log('\n\n\n');
-
-    var menoresValoresDasColunas = new Array(menorValorColuna1, menorValorColuna2, menorValorColuna3, menorValorColuna4);
-    console.log(menoresValoresDasColunas);
-
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        tabelaDeCustoReduzida[i][j] = tabelaDeCustoReduzida[i][j] - menoresValoresDasColunas[i];
-      }
-    }
-
-    //Apresentação
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        console.log(tabelaDeCustoReduzida[i][j]);
-      }
-      console.log('\n');
-    }
-
-    console.log('\n\n\n======================================================');
-
-    //Designação
-    var tabelaDesignacao = tabelaDeCustoReduzida;
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        if (tabelaDeCustoReduzida[i][j] == 0 && menoresValoresDasLinhas[i] == 0 && menoresValoresDasColunas[j] == 0) {
-          tabelaDesignacao[i][j] = 1;
-        }
-      }
-    }
-
-    //Apresentação
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        console.log(tabelaDesignacao[i][j]);
-      }
-      console.log('\n');
-    }
+    this.cr14 = tabelaDeCustoReduzida[0][3];
+    console.log("cr14 = " + this.cr14);
 
 
-    var mostrarResultado = true;
+
+
+    // console.log('\n\n\n======================================================');
+
+    // var coluna1 = new Array();
+    // var coluna2 = new Array();
+    // var coluna3 = new Array();
+    // var coluna4 = new Array();
+
+    // for (let i = 0; i < 4; i++) {
+    //   coluna1[i] = tabelaDeCustoReduzida[i][0];
+    // }
+    // for (let i = 0; i < 4; i++) {
+    //   coluna2[i] = tabelaDeCustoReduzida[i][1];
+    // }
+    // for (let i = 0; i < 4; i++) {
+    //   coluna3[i] = tabelaDeCustoReduzida[i][2];
+    // }
+    // for (let i = 0; i < 4; i++) {
+    //   coluna4[i] = tabelaDeCustoReduzida[i][3];
+    // }
+
+    // const menorValorColuna1 = Math.min.apply(Math, coluna1);
+    // console.log(menorValorColuna1);
+    // const menorValorColuna2 = Math.min.apply(Math, coluna2);
+    // console.log(menorValorColuna2);
+    // const menorValorColuna3 = Math.min.apply(Math, coluna3);
+    // console.log(menorValorColuna3);
+    // const menorValorColuna4 = Math.min.apply(Math, coluna4);
+    // console.log(menorValorColuna4);
+    // console.log('\n\n\n');
+
+    // var menoresValoresDasColunas = new Array(menorValorColuna1, menorValorColuna2, menorValorColuna3, menorValorColuna4);
+    // console.log(menoresValoresDasColunas);
+
+    // for (let i = 0; i < 4; i++) {
+    //   for (let j = 0; j < 4; j++) {
+    //     tabelaDeCustoReduzida[i][j] = tabelaDeCustoReduzida[i][j] - menoresValoresDasColunas[i];
+    //   }
+    // }
+
+    // //Apresentação
+    // for (let i = 0; i < 4; i++) {
+    //   for (let j = 0; j < 4; j++) {
+    //     console.log(tabelaDeCustoReduzida[i][j]);
+    //   }
+    //   console.log('\n');
+    // }
+
+    // this.cr11 = '10';
+
+
+
+
+
+
+    // console.log('\n\n\n======================================================');
+
+    // //Designação
+    // var tabelaDesignacao = tabelaDeCustoReduzida;
+    // for (let i = 0; i < 4; i++) {
+    //   for (let j = 0; j < 4; j++) {
+    //     if (tabelaDeCustoReduzida[i][j] == 0 && menoresValoresDasLinhas[i] == 0 && menoresValoresDasColunas[j] == 0) {
+    //       tabelaDesignacao[i][j] = 1;
+    //     }
+    //   }
+    // }
+
+    // //Apresentação
+    // for (let i = 0; i < 4; i++) {
+    //   for (let j = 0; j < 4; j++) {
+    //     console.log(tabelaDesignacao[i][j]);
+    //   }
+    //   console.log('\n');
+    // }
+
+    
+    this.mostrar();
+    console.log(this.mostrarResultado);
 
   }
+
+  mostrar() {
+    this.mostrarResultado = true;
+  }
+
+
 
 }

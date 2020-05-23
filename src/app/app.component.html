@@ -1,7 +1,6 @@
 <h1>Pesquisa Operacional</h1>
 
 <form [formGroup]="calculoForm" class="form mt-4" (submit)="calcular()">
-  <!-- <form class="form mt-4"> -->
   <table class="tabela">
     <tr>
       <th></th>
@@ -21,20 +20,20 @@
       <td>
         <input formControlName="12" class="form-control" type="number" id="12" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('12').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('12').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="13" class="form-control" type="number" id="13" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('13').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('13').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="14" class="form-control" type="number" id="14" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('14').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('14').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
     </tr>
     <tr>
@@ -48,20 +47,20 @@
       <td>
         <input formControlName="22" class="form-control" type="number" id="22" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('22').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('22').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="23" class="form-control" type="number" id="23" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('23').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('23').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="24" class="form-control" type="number" id="24" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('24').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('24').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
     </tr>
     <tr>
@@ -75,20 +74,20 @@
       <td>
         <input formControlName="32" class="form-control" type="number" id="32" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('32').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('32').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="33" class="form-control" type="number" id="33" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('33').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('33').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="34" class="form-control" type="number" id="34" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('34').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('34').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
     </tr>
     <tr>
@@ -102,23 +101,181 @@
       <td>
         <input formControlName="42" class="form-control" type="number" id="42" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('42').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('42').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="43" class="form-control" type="number" id="43" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('43').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('43').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
       <td>
         <input formControlName="44" class="form-control" type="number" id="44" required="required" pattern="[0-9]+$"
           placeholder="Digite um número">
-          <ap-vmessage *ngIf="calculoForm.get('44').errors?.required" text="O número é obrigatório!">
-          </ap-vmessage>
+        <ap-vmessage *ngIf="calculoForm.get('44').errors?.required" text="O número é obrigatório!">
+        </ap-vmessage>
       </td>
     </tr>
   </table>
 
   <input [disabled]="calculoForm.invalid" class="botao btn btn-primary" type="submit" value="calcular">
+
+
+
+
+
+
+  <div *ngIf="mostrarResultado">
+    <h1>Tabela de Custo Reduzida</h1>
+
+    <table class="tabela">
+      <tr>
+        <th></th>
+        <th>Destino 1</th>
+        <th>Destino 2</th>
+        <th>Destino 3</th>
+        <th>Destino 4</th>
+      </tr>
+      <tr>
+        <th>Origem 1</th>
+        <td>
+          <input formControlName="cr11" class="form-control" type="number" id="cr11" value="{{ cr11 }}" readonly>
+        </td>
+        <td>
+          <input formControlName="cr12" class="form-control" type="number" id="cr12" value="{{ cr12 }}" readonly>
+        </td>
+        <td>
+          <input formControlName="cr13" class="form-control" type="number" id="cr13" value="{{ cr13 }}" readonly>
+        </td>
+        <td>
+          <input formControlName="cr14" class="form-control" type="number" id="cr14" value="{{ cr14 }}" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>Origem 2</th>
+        <td>
+          <input formControlName="cr21" class="form-control" type="number" id="cr21" readonly>
+        </td>
+        <td>
+          <input formControlName="cr22" class="form-control" type="number" id="cr22" readonly>
+        </td>
+        <td>
+          <input formControlName="cr23" class="form-control" type="number" id="cr23" readonly>
+        </td>
+        <td>
+          <input formControlName="cr24" class="form-control" type="number" id="cr24" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>Origem 3</th>
+        <td>
+          <input formControlName="cr31" class="form-control" type="number" id="cr31" readonly>
+        </td>
+        <td>
+          <input formControlName="cr32" class="form-control" type="number" id="cr32" readonly>
+        </td>
+        <td>
+          <input formControlName="cr33" class="form-control" type="number" id="cr33" readonly>
+        </td>
+        <td>
+          <input formControlName="cr34" class="form-control" type="number" id="cr34" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>Origem 4</th>
+        <td>
+          <input formControlName="cr41" class="form-control" type="number" id="cr41" readonly>
+        </td>
+        <td>
+          <input formControlName="cr42" class="form-control" type="number" id="cr42" readonly>
+        </td>
+        <td>
+          <input formControlName="cr43" class="form-control" type="number" id="cr43" readonly>
+        </td>
+        <td>
+          <input formControlName="cr44" class="form-control" type="number" id="cr44" readonly>
+        </td>
+      </tr>
+    </table>
+
+
+
+
+
+
+
+    <h1>Tabela Designação de Transporte</h1>
+
+    <table class="tabela">
+      <tr>
+        <th></th>
+        <th>Destino 1</th>
+        <th>Destino 2</th>
+        <th>Destino 3</th>
+        <th>Destino 4</th>
+      </tr>
+      <tr>
+        <th>Origem 1</th>
+        <td>
+          <input formControlName="dt11" class="form-control" type="number" id="dt11" readonly>
+        </td>
+        <td>
+          <input formControlName="dt12" class="form-control" type="number" id="dt12" readonly>
+        </td>
+        <td>
+          <input formControlName="13" class="form-control" type="number" id="dt13" readonly>
+        </td>
+        <td>
+          <input formControlName="dt14" class="form-control" type="number" id="dt14" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>Origem 2</th>
+        <td>
+          <input formControlName="dt21" class="form-control" type="number" id="dt21" readonly>
+        </td>
+        <td>
+          <input formControlName="dt22" class="form-control" type="number" id="dt22" readonly>
+        </td>
+        <td>
+          <input formControlName="23" class="form-control" type="number" id="dt23" readonly>
+        </td>
+        <td>
+          <input formControlName="dt24" class="form-control" type="number" id="dt24" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>Origem 3</th>
+        <td>
+          <input formControlName="dt31" class="form-control" type="number" id="dt31" readonly>
+        </td>
+        <td>
+          <input formControlName="dt32" class="form-control" type="number" id="dt32" readonly>
+        </td>
+        <td>
+          <input formControlName="dt33" class="form-control" type="number" id="dt33" readonly>
+        </td>
+        <td>
+          <input formControlName="dt34" class="form-control" type="number" id="dt34" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>Origem 4</th>
+        <td>
+          <input formControlName="dt41" class="form-control" type="number" id="dt41" readonly>
+        </td>
+        <td>
+          <input formControlName="dt42" class="form-control" type="number" id="dt42" readonly>
+        </td>
+        <td>
+          <input formControlName="dt43" class="form-control" type="number" id="dt43" readonly>
+        </td>
+        <td>
+          <input formControlName="dt44" class="form-control" type="number" id="dt44" readonly>
+        </td>
+      </tr>
+    </table>
+  </div>
+
 </form>
