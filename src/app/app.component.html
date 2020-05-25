@@ -126,7 +126,7 @@
 
 
 
-  <div *ngIf="mostrarResultado">
+  <div [hidden]="ocultarResultado">
     <h1>Tabela de Custo Reduzida</h1>
 
     <table class="tabela">
@@ -155,46 +155,46 @@
       <tr>
         <th>Origem 2</th>
         <td>
-          <input formControlName="cr21" class="form-control" type="number" id="cr21" readonly>
+          <input formControlName="cr21" class="form-control" type="number" id="cr21" value="{{ cr21 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr22" class="form-control" type="number" id="cr22" readonly>
+          <input formControlName="cr22" class="form-control" type="number" id="cr22" value="{{ cr22 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr23" class="form-control" type="number" id="cr23" readonly>
+          <input formControlName="cr23" class="form-control" type="number" id="cr23" value="{{ cr23 }}"readonly>
         </td>
         <td>
-          <input formControlName="cr24" class="form-control" type="number" id="cr24" readonly>
+          <input formControlName="cr24" class="form-control" type="number" id="cr24" value="{{ cr24 }}" readonly>
         </td>
       </tr>
       <tr>
         <th>Origem 3</th>
         <td>
-          <input formControlName="cr31" class="form-control" type="number" id="cr31" readonly>
+          <input formControlName="cr31" class="form-control" type="number" id="cr31" value="{{ cr31 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr32" class="form-control" type="number" id="cr32" readonly>
+          <input formControlName="cr32" class="form-control" type="number" id="cr32" value="{{ cr32 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr33" class="form-control" type="number" id="cr33" readonly>
+          <input formControlName="cr33" class="form-control" type="number" id="cr33" value="{{ cr33 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr34" class="form-control" type="number" id="cr34" readonly>
+          <input formControlName="cr34" class="form-control" type="number" id="cr34" value="{{ cr34 }}" readonly>
         </td>
       </tr>
       <tr>
         <th>Origem 4</th>
         <td>
-          <input formControlName="cr41" class="form-control" type="number" id="cr41" readonly>
+          <input formControlName="cr41" class="form-control" type="number" id="cr41" value="{{ cr41 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr42" class="form-control" type="number" id="cr42" readonly>
+          <input formControlName="cr42" class="form-control" type="number" id="cr42" value="{{ cr42 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr43" class="form-control" type="number" id="cr43" readonly>
+          <input formControlName="cr43" class="form-control" type="number" id="cr43" value="{{ cr43 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr44" class="form-control" type="number" id="cr44" readonly>
+          <input formControlName="cr44" class="form-control" type="number" id="cr44" value="{{ cr44 }}" readonly>
         </td>
       </tr>
     </table>

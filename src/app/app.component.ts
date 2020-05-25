@@ -10,12 +10,12 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
 
   calculoForm: FormGroup;
-  mostrarResultado: boolean = false;
+  ocultarResultado: boolean = true;
 
   cr11: number;
   cr12: number;
-  cr13: number = 0;
-  cr14: number = 0;
+  cr13: number;
+  cr14: number;
 
   cr21: string = '';
   cr22: string = '';
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.mostrarResultado = false;
+    this.ocultarResultado = true;
 
     this.calculoForm = this.formBuilder.group({
 
@@ -80,45 +80,45 @@ export class AppComponent implements OnInit {
       43: ['', Validators.required],
       44: ['', Validators.required],
 
-      // cr11: [this.cr11],
-      // cr12: [this.cr12],
-      // cr13: [''],
-      // cr14: [''],
+      cr11: 0,
+      cr12: 0,
+      cr13: 0,
+      cr14: 0,
       
-      // cr21: 0,
-      // cr22: 0,
-      // cr23: 0,
-      // cr24: 0,
+      cr21: 0,
+      cr22: 0,
+      cr23: 0,
+      cr24: 0,
 
-      // cr31: 0,
-      // cr32: 0,
-      // cr33: 0,
-      // cr34: 0,
+      cr31: 0,
+      cr32: 0,
+      cr33: 0,
+      cr34: 0,
 
-      // cr41: 0,
-      // cr42: 0,
-      // cr43: 0,
-      // cr44: 0,
+      cr41: 0,
+      cr42: 0,
+      cr43: 0,
+      cr44: 0,
 
-      // dt11: 0,
-      // dt12: 0,
-      // dt13: 0,
-      // dt14: 0,
+      dt11: 0,
+      dt12: 0,
+      dt13: 0,
+      dt14: 0,
       
-      // dt21: 0,
-      // dt22: 0,
-      // dt23: 0,
-      // dt24: 0,
+      dt21: 0,
+      dt22: 0,
+      dt23: 0,
+      dt24: 0,
 
-      // dt31: 0,
-      // dt32: 0,
-      // dt33: 0,
-      // dt34: 0,
+      dt31: 0,
+      dt32: 0,
+      dt33: 0,
+      dt34: 0,
 
-      // dt41: 0,
-      // dt42: 0,
-      // dt43: 0,
-      // dt44: 0
+      dt41: 0,
+      dt42: 0,
+      dt43: 0,
+      dt44: 0
 
 
 
@@ -127,7 +127,9 @@ export class AppComponent implements OnInit {
 
   calcular() {
 
-    console.log(this.mostrarResultado);
+    var tabelaDeCustoReduzida1:number[][];
+    
+    
 
     const v11 = this.calculoForm.get('11').value;
     const v12 = this.calculoForm.get('12').value;
@@ -188,15 +190,39 @@ export class AppComponent implements OnInit {
 
     this.cr11 = tabelaDeCustoReduzida[0][0];
     console.log("cr11 = " + this.cr11);
-
     this.cr12 = tabelaDeCustoReduzida[0][1];
     console.log("cr12 = " + this.cr12);
-
     this.cr13 = tabelaDeCustoReduzida[0][2];
     console.log("cr13 = " + this.cr13);
-
     this.cr14 = tabelaDeCustoReduzida[0][3];
     console.log("cr14 = " + this.cr14);
+
+    this.cr21 = tabelaDeCustoReduzida[1][0];
+    console.log("cr21 = " + this.cr21);
+    this.cr22 = tabelaDeCustoReduzida[1][1];
+    console.log("cr22 = " + this.cr22);
+    this.cr23 = tabelaDeCustoReduzida[1][2];
+    console.log("cr23 = " + this.cr23);
+    this.cr24 = tabelaDeCustoReduzida[1][3];
+    console.log("cr24 = " + this.cr24);
+
+    this.cr11 = tabelaDeCustoReduzida[0][0];
+    console.log("cr11 = " + this.cr31);
+    this.cr12 = tabelaDeCustoReduzida[0][1];
+    console.log("cr12 = " + this.cr32);
+    this.cr13 = tabelaDeCustoReduzida[0][2];
+    console.log("cr13 = " + this.cr33);
+    this.cr14 = tabelaDeCustoReduzida[0][3];
+    console.log("cr14 = " + this.cr34);
+
+    this.cr11 = tabelaDeCustoReduzida[0][0];
+    console.log("cr11 = " + this.cr41);
+    this.cr12 = tabelaDeCustoReduzida[0][1];
+    console.log("cr12 = " + this.cr42);
+    this.cr13 = tabelaDeCustoReduzida[0][2];
+    console.log("cr13 = " + this.cr43);
+    this.cr14 = tabelaDeCustoReduzida[0][3];
+    console.log("cr14 = " + this.cr44);
 
 
 
@@ -277,12 +303,11 @@ export class AppComponent implements OnInit {
 
     
     this.mostrar();
-    console.log(this.mostrarResultado);
 
   }
 
   mostrar() {
-    this.mostrarResultado = true;
+    this.ocultarResultado = false;
   }
 
 
