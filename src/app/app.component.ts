@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
     this.cr43 = tabelaDeCustoReduzida[3][2];
     this.cr44 = tabelaDeCustoReduzida[3][3];
 
-    
+
     let coluna1 = new Array();
     let coluna2 = new Array();
     let coluna3 = new Array();
@@ -236,34 +236,43 @@ export class AppComponent implements OnInit {
     this.cr43 = tabelaDeCustoReduzida[3][2];
     this.cr44 = tabelaDeCustoReduzida[3][3];
 
+    let marcaLinha = new Array(0, 0, 0, 0);
+    let marcaColuna = new Array(0, 0, 0, 0);
+    let tabelaDesignacao = new Array(new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0));
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (tabelaDeCustoReduzida[i][j] == 0 && marcaLinha[i] == 0 && marcaLinha[j] == 0) {
+          tabelaDesignacao[i][j] = 1;
+          marcaLinha[i] = 1;
+          marcaColuna[j] = 1;
+        }
+      }
+    }
 
-    // //Designação
-    // var tabelaDesignacao = tabelaDeCustoReduzida;
-    // for (let i = 0; i < 4; i++) {
-    //   for (let j = 0; j < 4; j++) {
-    //     if (tabelaDeCustoReduzida[i][j] == 0 && menoresValoresDasLinhas[i] == 0 && menoresValoresDasColunas[j] == 0) {
-    //       tabelaDesignacao[i][j] = 1;
-    //     }
-    //   }
-    // }
+    this.dt11 = tabelaDesignacao[0][0];
+    this.dt12 = tabelaDesignacao[0][1];
+    this.dt13 = tabelaDesignacao[0][2];
+    this.dt14 = tabelaDesignacao[0][3];
 
-    // //Apresentação
-    // for (let i = 0; i < 4; i++) {
-    //   for (let j = 0; j < 4; j++) {
-    //     console.log(tabelaDesignacao[i][j]);
-    //   }
-    //   console.log('\n');
-    // }
+    this.dt21 = tabelaDesignacao[1][0];
+    this.dt22 = tabelaDesignacao[1][1];
+    this.dt23 = tabelaDesignacao[1][2];
+    this.dt24 = tabelaDesignacao[1][3];
 
+    this.dt31 = tabelaDesignacao[2][0];
+    this.dt32 = tabelaDesignacao[2][1];
+    this.dt33 = tabelaDesignacao[2][2];
+    this.dt34 = tabelaDesignacao[2][3];
+
+    this.dt41 = tabelaDesignacao[3][0];
+    this.dt42 = tabelaDesignacao[3][1];
+    this.dt43 = tabelaDesignacao[3][2];
+    this.dt44 = tabelaDesignacao[3][3];
 
     this.mostrar();
-
   }
 
   mostrar() {
     this.ocultarResultado = false;
   }
-
-
-
 }
