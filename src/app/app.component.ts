@@ -149,8 +149,6 @@ export class AppComponent implements OnInit {
     let linha3 = new Array(v31, v32, v33, v34);
     let linha4 = new Array(v41, v42, v43, v44);
 
-    //var tabelaCustoDeTransporte = new Array(linha1, linha2, linha3, linha4);
-
     let menorValorLinha1 = Math.min.apply(Math, linha1);
     let menorValorLinha2 = Math.min.apply(Math, linha2);
     let menorValorLinha3 = Math.min.apply(Math, linha3);
@@ -167,40 +165,24 @@ export class AppComponent implements OnInit {
     }
 
     this.cr11 = tabelaDeCustoReduzida[0][0];
-    console.log("cr11 = " + this.cr11);
     this.cr12 = tabelaDeCustoReduzida[0][1];
-    console.log("cr12 = " + this.cr12);
     this.cr13 = tabelaDeCustoReduzida[0][2];
-    console.log("cr13 = " + this.cr13);
     this.cr14 = tabelaDeCustoReduzida[0][3];
-    console.log("cr14 = " + this.cr14);
 
     this.cr21 = tabelaDeCustoReduzida[1][0];
-    console.log("cr21 = " + this.cr21);
     this.cr22 = tabelaDeCustoReduzida[1][1];
-    console.log("cr22 = " + this.cr22);
     this.cr23 = tabelaDeCustoReduzida[1][2];
-    console.log("cr23 = " + this.cr23);
     this.cr24 = tabelaDeCustoReduzida[1][3];
-    console.log("cr24 = " + this.cr24);
 
     this.cr31 = tabelaDeCustoReduzida[2][0];
-    console.log("cr11 = " + this.cr31);
     this.cr32 = tabelaDeCustoReduzida[2][1];
-    console.log("cr12 = " + this.cr32);
     this.cr33 = tabelaDeCustoReduzida[2][2];
-    console.log("cr13 = " + this.cr33);
     this.cr34 = tabelaDeCustoReduzida[2][3];
-    console.log("cr14 = " + this.cr34);
 
     this.cr41 = tabelaDeCustoReduzida[3][0];
-    console.log("cr11 = " + this.cr41);
     this.cr42 = tabelaDeCustoReduzida[3][1];
-    console.log("cr12 = " + this.cr42);
     this.cr43 = tabelaDeCustoReduzida[3][2];
-    console.log("cr13 = " + this.cr43);
     this.cr44 = tabelaDeCustoReduzida[3][3];
-    console.log("cr14 = " + this.cr44);
 
     
     let coluna1 = new Array();
@@ -222,16 +204,11 @@ export class AppComponent implements OnInit {
     }
 
     const menorValorColuna1 = Math.min.apply(Math, coluna1);
-    console.log(menorValorColuna1);
     const menorValorColuna2 = Math.min.apply(Math, coluna2);
-    console.log(menorValorColuna2);
     const menorValorColuna3 = Math.min.apply(Math, coluna3);
-    console.log(menorValorColuna3);
     const menorValorColuna4 = Math.min.apply(Math, coluna4);
-    console.log(menorValorColuna4);
 
     var menoresValoresDasColunas = new Array(menorValorColuna1, menorValorColuna2, menorValorColuna3, menorValorColuna4);
-    console.log(menoresValoresDasColunas);
 
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
@@ -240,40 +217,24 @@ export class AppComponent implements OnInit {
     }
 
     this.cr11 = tabelaDeCustoReduzida[0][0];
-    console.log("cr11 = " + this.cr11);
     this.cr12 = tabelaDeCustoReduzida[0][1];
-    console.log("cr12 = " + this.cr12);
     this.cr13 = tabelaDeCustoReduzida[0][2];
-    console.log("cr13 = " + this.cr13);
     this.cr14 = tabelaDeCustoReduzida[0][3];
-    console.log("cr14 = " + this.cr14);
 
     this.cr21 = tabelaDeCustoReduzida[1][0];
-    console.log("cr21 = " + this.cr21);
     this.cr22 = tabelaDeCustoReduzida[1][1];
-    console.log("cr22 = " + this.cr22);
     this.cr23 = tabelaDeCustoReduzida[1][2];
-    console.log("cr23 = " + this.cr23);
     this.cr24 = tabelaDeCustoReduzida[1][3];
-    console.log("cr24 = " + this.cr24);
 
     this.cr31 = tabelaDeCustoReduzida[2][0];
-    console.log("cr11 = " + this.cr31);
     this.cr32 = tabelaDeCustoReduzida[2][1];
-    console.log("cr12 = " + this.cr32);
     this.cr33 = tabelaDeCustoReduzida[2][2];
-    console.log("cr13 = " + this.cr33);
     this.cr34 = tabelaDeCustoReduzida[2][3];
-    console.log("cr14 = " + this.cr34);
 
     this.cr41 = tabelaDeCustoReduzida[3][0];
-    console.log("cr11 = " + this.cr41);
     this.cr42 = tabelaDeCustoReduzida[3][1];
-    console.log("cr12 = " + this.cr42);
     this.cr43 = tabelaDeCustoReduzida[3][2];
-    console.log("cr13 = " + this.cr43);
     this.cr44 = tabelaDeCustoReduzida[3][3];
-    console.log("cr14 = " + this.cr44);
 
 
     // //Designação
