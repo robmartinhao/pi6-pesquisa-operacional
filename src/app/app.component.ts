@@ -155,14 +155,10 @@ export class AppComponent implements OnInit {
     let menorValorLinha4 = Math.min.apply(Math, linha4);
 
     let menoresValoresDasLinhas = new Array(menorValorLinha1, menorValorLinha2, menorValorLinha3, menorValorLinha4);
-
     let tabelaDeCustoReduzida = new Array(linha1, linha2, linha3, linha4);
 
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        tabelaDeCustoReduzida[i][j] = tabelaDeCustoReduzida[i][j] - menoresValoresDasLinhas[i];
-      }
-    }
+    tabelaDeCustoReduzida = this.subtraiMenorValorDeCadaLinha(tabelaDeCustoReduzida, menoresValoresDasLinhas);
+
 
     this.cr11 = tabelaDeCustoReduzida[0][0];
     this.cr12 = tabelaDeCustoReduzida[0][1];
@@ -210,11 +206,9 @@ export class AppComponent implements OnInit {
 
     var menoresValoresDasColunas = new Array(menorValorColuna1, menorValorColuna2, menorValorColuna3, menorValorColuna4);
 
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        tabelaDeCustoReduzida[j][i] = tabelaDeCustoReduzida[j][i] - menoresValoresDasColunas[i];
-      }
-    }
+    tabelaDeCustoReduzida = this.subtraiMenorValorDeCadaColuna(tabelaDeCustoReduzida, menoresValoresDasColunas);
+
+
 
     this.cr11 = tabelaDeCustoReduzida[0][0];
     this.cr12 = tabelaDeCustoReduzida[0][1];
@@ -236,18 +230,10 @@ export class AppComponent implements OnInit {
     this.cr43 = tabelaDeCustoReduzida[3][2];
     this.cr44 = tabelaDeCustoReduzida[3][3];
 
-    let marcaLinha = new Array(0, 0, 0, 0);
-    let marcaColuna = new Array(0, 0, 0, 0);
+
     let tabelaDesignacao = new Array(new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0));
-    for (let i = 0; i < 4; i++) {
-      for (let j = 0; j < 4; j++) {
-        if (tabelaDeCustoReduzida[i][j] == 0 && marcaLinha[i] == 0 && marcaLinha[j] == 0) {
-          tabelaDesignacao[i][j] = 1;
-          marcaLinha[i] = 1;
-          marcaColuna[j] = 1;
-        }
-      }
-    }
+
+    tabelaDesignacao = this.calculaDesignacao(tabelaDeCustoReduzida);
 
     this.dt11 = tabelaDesignacao[0][0];
     this.dt12 = tabelaDesignacao[0][1];
@@ -270,6 +256,40 @@ export class AppComponent implements OnInit {
     this.dt44 = tabelaDesignacao[3][3];
 
     this.mostrar();
+  }
+
+  subtraiMenorValorDeCadaLinha(tabelaDeCustoReduzida: any[][], menoresValoresDasLinhas: any[]) {
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        tabelaDeCustoReduzida[i][j] = tabelaDeCustoReduzida[i][j] - menoresValoresDasLinhas[i];
+      }
+    }
+    return tabelaDeCustoReduzida;
+  }
+
+  subtraiMenorValorDeCadaColuna(tabelaDeCustoReduzida: any[][], menoresValoresDasColunas: any[]) {
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        tabelaDeCustoReduzida[j][i] = tabelaDeCustoReduzida[j][i] - menoresValoresDasColunas[i];
+      }
+    }
+    return tabelaDeCustoReduzida;
+  }
+
+  calculaDesignacao(tabelaDeCustoReduzida: any[][]) {
+    let marcaLinha = new Array(0, 0, 0, 0);
+    let marcaColuna = new Array(0, 0, 0, 0);
+    let tabelaDesignacao = new Array(new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0));
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (tabelaDeCustoReduzida[i][j] == 0 && marcaLinha[i] == 0 && marcaLinha[j] == 0) {
+          tabelaDesignacao[i][j] = 1;
+          marcaLinha[i] = 1;
+          marcaColuna[j] = 1;
+        }
+      }
+    }
+    return tabelaDesignacao;
   }
 
   mostrar() {
