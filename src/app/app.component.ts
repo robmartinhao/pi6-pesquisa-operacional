@@ -122,6 +122,10 @@ export class AppComponent implements OnInit {
     });
   }
 
+  limpar(): void {
+    window.location.reload();
+  }
+
   calcular() {
 
     const v11 = this.calculoForm.get('11').value;
