@@ -163,28 +163,6 @@ export class AppComponent implements OnInit {
 
     tabelaDeCustoReduzida = this.subtraiMenorValorDeCadaLinha(tabelaDeCustoReduzida, menoresValoresDasLinhas);
 
-
-    this.cr11 = tabelaDeCustoReduzida[0][0];
-    this.cr12 = tabelaDeCustoReduzida[0][1];
-    this.cr13 = tabelaDeCustoReduzida[0][2];
-    this.cr14 = tabelaDeCustoReduzida[0][3];
-
-    this.cr21 = tabelaDeCustoReduzida[1][0];
-    this.cr22 = tabelaDeCustoReduzida[1][1];
-    this.cr23 = tabelaDeCustoReduzida[1][2];
-    this.cr24 = tabelaDeCustoReduzida[1][3];
-
-    this.cr31 = tabelaDeCustoReduzida[2][0];
-    this.cr32 = tabelaDeCustoReduzida[2][1];
-    this.cr33 = tabelaDeCustoReduzida[2][2];
-    this.cr34 = tabelaDeCustoReduzida[2][3];
-
-    this.cr41 = tabelaDeCustoReduzida[3][0];
-    this.cr42 = tabelaDeCustoReduzida[3][1];
-    this.cr43 = tabelaDeCustoReduzida[3][2];
-    this.cr44 = tabelaDeCustoReduzida[3][3];
-
-
     let coluna1 = new Array();
     let coluna2 = new Array();
     let coluna3 = new Array();
