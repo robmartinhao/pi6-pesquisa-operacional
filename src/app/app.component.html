@@ -161,7 +161,7 @@
           <input formControlName="cr22" class="form-control" type="number" id="cr22" value="{{ cr22 }}" readonly>
         </td>
         <td>
-          <input formControlName="cr23" class="form-control" type="number" id="cr23" value="{{ cr23 }}"readonly>
+          <input formControlName="cr23" class="form-control" type="number" id="cr23" value="{{ cr23 }}" readonly>
         </td>
         <td>
           <input formControlName="cr24" class="form-control" type="number" id="cr24" value="{{ cr24 }}" readonly>
@@ -266,7 +266,7 @@
           <input formControlName="dt41" class="form-control" type="number" id="dt41" value="{{ dt41 }}" readonly>
         </td>
         <td>
-          <input formControlName="dt42" class="form-control" type="number" id="dt42"  value="{{ dt42 }}" readonly>
+          <input formControlName="dt42" class="form-control" type="number" id="dt42" value="{{ dt42 }}" readonly>
         </td>
         <td>
           <input formControlName="dt43" class="form-control" type="number" id="dt43" value="{{ dt43 }}" readonly>
@@ -276,6 +276,12 @@
         </td>
       </tr>
     </table>
+  </div>
+  <div [hidden]="ocultarHouveDesignacao">
+    <h2>Houve Designação!</h2>
+  </div>
+  <div [hidden]="ocultarNaoHouveDesignacao">
+    <h2>Não Houve Designação!</h2>
   </div>
 </form>
 

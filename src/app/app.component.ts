@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
 
   calculoForm: FormGroup;
   ocultarResultado: boolean = true;
+  ocultarNaoHouveDesignacao: boolean = true;
+  ocultarHouveDesignacao: boolean = true;
 
   cr11: number;
   cr12: number;
@@ -57,6 +59,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.ocultarResultado = true;
+    this.ocultarHouveDesignacao = true;
+    this.ocultarNaoHouveDesignacao = true;
 
     this.calculoForm = this.formBuilder.group({
 
@@ -190,8 +194,6 @@ export class AppComponent implements OnInit {
 
     tabelaDeCustoReduzida = this.subtraiMenorValorDeCadaColuna(tabelaDeCustoReduzida, menoresValoresDasColunas);
 
-
-
     this.cr11 = tabelaDeCustoReduzida[0][0];
     this.cr12 = tabelaDeCustoReduzida[0][1];
     this.cr13 = tabelaDeCustoReduzida[0][2];
@@ -211,7 +213,6 @@ export class AppComponent implements OnInit {
     this.cr42 = tabelaDeCustoReduzida[3][1];
     this.cr43 = tabelaDeCustoReduzida[3][2];
     this.cr44 = tabelaDeCustoReduzida[3][3];
-
 
     let tabelaDesignacao = new Array(new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0));
 
@@ -237,6 +238,8 @@ export class AppComponent implements OnInit {
     this.dt43 = tabelaDesignacao[3][2];
     this.dt44 = tabelaDesignacao[3][3];
 
+    this.verificaDesignacao(tabelaDesignacao);
+
     this.mostrar();
   }
 
@@ -259,19 +262,59 @@ export class AppComponent implements OnInit {
   }
 
   calculaDesignacao(tabelaDeCustoReduzida: any[][]) {
-    let marcaLinha = new Array(0, 0, 0, 0);
-    let marcaColuna = new Array(0, 0, 0, 0);
-    let tabelaDesignacao = new Array(new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0), new Array(0, 0, 0, 0));
+
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
-        if (tabelaDeCustoReduzida[i][j] == 0 && marcaLinha[i] == 0 && marcaLinha[j] == 0) {
-          tabelaDesignacao[i][j] = 1;
-          marcaLinha[i] = 1;
-          marcaColuna[j] = 1;
+        if (tabelaDeCustoReduzida[i][j] == 0) {
+          tabelaDeCustoReduzida[i][j] = 'x';
         }
       }
     }
-    return tabelaDesignacao;
+
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (tabelaDeCustoReduzida[i][j] == 'x') {
+
+          for (let k = 0; k < 4; k++) {
+            tabelaDeCustoReduzida[i][k] = 0;
+          }
+          tabelaDeCustoReduzida[i][j] = 1;
+
+          for (let l = 0; l < 4; l++) {
+            tabelaDeCustoReduzida[l][j] = 0;
+          }
+          tabelaDeCustoReduzida[i][j] = 1;
+
+        }
+      }
+    }
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (tabelaDeCustoReduzida[i][j] !== 0 && tabelaDeCustoReduzida[i][j] !== 1) {
+          tabelaDeCustoReduzida[i][j] = 0;
+        }
+      }
+    }
+    return tabelaDeCustoReduzida;
+  }
+
+  verificaDesignacao(tabelaDesignacao: any[][]) {
+    let count = 0;
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (tabelaDesignacao[i][j] == 1) {
+          count++;
+        }
+      }
+    }
+    if (count == 4) {
+      this.ocultarHouveDesignacao = false;
+      this.ocultarNaoHouveDesignacao = true;
+
+    } else {
+      this.ocultarNaoHouveDesignacao = false;
+      this.ocultarHouveDesignacao = true;
+    }
   }
 
   mostrar() {
